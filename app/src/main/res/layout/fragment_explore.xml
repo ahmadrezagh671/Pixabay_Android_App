@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentExplore"
+    android:background="@color/BackgroundColor"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/topDiscoverLayout"
+            >
+
+
+            <TextView
+                android:id="@+id/discoverTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Discover"
+                android:textColor="@color/text_color_white"
+                android:textSize="28dp"
+                android:layout_marginStart="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingsIB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/settingsIB" />
+
+            <ImageButton
+                android:id="@+id/settingsIB"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginTop="14dp"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/text_color_white"
+                />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/topSearchAndFilterLayout"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topDiscoverLayout"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginTop="14dp"
+            >
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/shape_rounded"
+                android:iconifiedByDefault="false"
+                android:queryBackground="@android:color/transparent"
+                android:queryHint="Search posts ..."
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/topFilterLayout"
+                android:layout_marginTop="14dp"
+                android:weightSum="100"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/categorySelectorBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_rounded"
+                    android:paddingHorizontal="16dp"
+                    android:text="Category   ☰"
+                    android:fontFamily="sans-serif-black"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:layout_weight="55"
+                    android:stateListAnimator="@null"
+                    android:singleLine="true"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/colorSelectorBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_rounded"
+                    android:paddingHorizontal="16dp"
+                    android:text="Color   ☰"
+                    android:fontFamily="sans-serif-black"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="35"
+                    android:stateListAnimator="@null"
+                    android:singleLine="true"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/latestBTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_rounded"
+                    android:paddingHorizontal="16dp"
+                    android:text="Latest"
+                    android:fontFamily="sans-serif-black"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="10"
+                    android:stateListAnimator="@null"
+                    android:singleLine="true"
+                    />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/SwipeRefreshLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topSearchAndFilterLayout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

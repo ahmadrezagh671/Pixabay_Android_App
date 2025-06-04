@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:background="@drawable/shape_rounded"
+    android:layout_marginBottom="12dp"
+    android:layout_marginHorizontal="12dp"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@drawable/example_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/profilePic"
+        android:scaleType="centerCrop"
+        android:layout_margin="6dp"
+        android:padding="8dp"
+        android:backgroundTint="@color/DarkBackgroundColor"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/profilePic"
+        app:layout_constraintStart_toEndOf="@+id/profilePic"
+        app:layout_constraintTop_toTopOf="@+id/profilePic">
+
+        <TextView
+            android:id="@+id/usernameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_white"
+            android:textSize="14sp"
+            tools:text="username" />
+
+        <TextView
+            android:id="@+id/postTypeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/text_color_gray"
+            android:textSize="12sp"
+            tools:text="photo" />
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/moreIB"
+        android:padding="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_3dot"
+        app:layout_constraintBottom_toBottomOf="@+id/profilePic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profilePic"
+        app:tint="@color/text_color_white" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="1dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:foregroundGravity="center"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profilePic"
+        tools:src="@drawable/example_image"/>
+
+    <TextView
+        android:id="@+id/tagsTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="tags"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/text_color_white"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tagsTV">
+
+        <ImageButton
+            android:id="@+id/likeIB"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="4dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_like_border"
+            app:tint="@color/red" />
+
+        <TextView
+            android:id="@+id/likeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="100"
+            android:textSize="15sp"
+            android:textColor="@color/text_color_white"
+            />
+
+        <ImageButton
+            android:id="@+id/commentIB"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="4dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_comment"
+            app:tint="@color/blue" />
+
+        <TextView
+            android:id="@+id/commentTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="200"
+            android:textSize="15sp"
+            android:textColor="@color/text_color_white"
+            />
+
+        <ImageButton
+            android:id="@+id/downloadIB"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="4dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_download"
+            app:tint="@color/green" />
+
+        <TextView
+            android:id="@+id/downloadTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            tools:text="400"
+            android:textSize="15sp"
+            android:textColor="@color/text_color_white"
+            />
+
+
+    </LinearLayout>
+
+
+   <!-- <ImageButton
+        android:layout_marginEnd="14dp"
+        android:id="@+id/markIB"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:padding="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_mark"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        app:tint="@color/text_color_white" />-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
