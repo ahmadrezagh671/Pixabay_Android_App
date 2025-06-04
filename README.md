@@ -24,9 +24,9 @@ An Android application that uses the [Pixabay API](https://pixabay.com/api/docs/
 
 ## 📸 Screenshots
 
-| ![Screenshot 1](Screenshots/image01.png) | ![Screenshot 2](Screenshots/image02.png) | ![Screenshot 3](Screenshots/image03.png) |
+| ![Screenshot 1](Screenshots/01.png) | ![Screenshot 2](Screenshots/02.png) | ![Screenshot 3](Screenshots/03.png) |
 |-----------------------------------------|-----------------------------------------|-----------------------------------------|
-| ![Screenshot 4](Screenshots/image04.png) | ![Screenshot 5](Screenshots/image05.png) | ![Screenshot 6](Screenshots/image06.png) |
+| ![Screenshot 4](Screenshots/04.png) | ![Screenshot 5](Screenshots/05.png) | ![Screenshot 6](Screenshots/06.png) |
 
 ## 🚀 Getting Started
 
