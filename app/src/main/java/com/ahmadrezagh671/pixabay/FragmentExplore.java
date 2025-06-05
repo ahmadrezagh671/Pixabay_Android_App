@@ -160,7 +160,7 @@ public class FragmentExplore extends Fragment implements SwipeRefreshLayout.OnRe
 
         lastSearchWords = words==null ? new String[]{} : words;
 
-        String url = UrlApiUtil.getPhotosUrl(getResources().getString(R.string.API_Key),lastSearchWords,category,color,latestEnable);
+        String url = UrlApiUtil.getPhotosUrl(lastSearchWords,category,color,latestEnable);
         Log.i(TAG, "requestPostsFromApi: " + url);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {

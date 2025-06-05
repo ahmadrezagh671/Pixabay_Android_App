@@ -91,7 +91,7 @@ public class FragmentCategory extends Fragment {
         String[] category_array= getResources().getStringArray(R.array.category_array);
 
         for (String category:category_array) {
-            String url = UrlApiUtil.getCategoryUrl(getResources().getString(R.string.API_Key),category);
+            String url = UrlApiUtil.getCategoryUrl(category);
 
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
                 @Override

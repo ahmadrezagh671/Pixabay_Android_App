@@ -4,8 +4,4 @@
         Pixabay App is a clean and efficient Android application built as a convenient interface for accessing the Pixabay API. It provides a fast, modern, and easy-to-use experience for discovering and browsing free images and videos from Pixabay’s vast library.\n\nThis app is an independent, community-driven project and is not officially affiliated with Pixabay.com. It was created purely for educational and non-commercial purposes.\n\nDeveloped by Ahmadrezagh671@gmail.com
     </string>
     <string name="githubLink">https://github.com/ahmadrezagh671/Pixabay_Android_App/</string>
-
-    <!--Get API from Pixabay-->
-    <string name="API_Key">your api</string>
-    <!--It's not secure to store it in strings.xml, but it's acceptable for testing purposes.-->
 </resources>
