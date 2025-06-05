@@ -2,6 +2,7 @@ package com.ahmadrezagh671.pixabay.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -67,8 +68,9 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
                         if (id == R.id.menuOpenPage){
                             AppUtil.openLink(post.getPageURL(),context);
                         } else if (id == R.id.menuDownload) {
-                            String[] temp = post.getLargeImageURL().split("//.");
-                            String fileName = post.getUser() + post.getId() + temp[temp.length-1];
+                            String[] temp = post.getLargeImageURL().split("\\.");
+                            String fileName = post.getUser() + post.getId() + "." +temp[temp.length-1];
+                            Log.i("fileName", "onMenuItemClick: " + fileName);
                             AppUtil.downloadFile(post.getLargeImageURL(),fileName,activity);
                         }
                         return true;
