@@ -67,7 +67,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
                         if (id == R.id.menuOpenPage){
                             AppUtil.openLink(post.getPageURL(),context);
                         } else if (id == R.id.menuDownload) {
-                            String[] temp = post.getLargeImageURL().split(".");
+                            String[] temp = post.getLargeImageURL().split("//.");
                             String fileName = post.getUser() + post.getId() + temp[temp.length-1];
                             AppUtil.downloadFile(post.getLargeImageURL(),fileName,activity);
                         }
