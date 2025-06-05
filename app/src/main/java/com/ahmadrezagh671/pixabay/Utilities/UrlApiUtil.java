@@ -2,10 +2,12 @@ package com.ahmadrezagh671.pixabay.Utilities;
 
 import androidx.annotation.Nullable;
 
+import com.ahmadrezagh671.pixabay.BuildConfig;
+
 public class UrlApiUtil {
 
-    public static String getPhotosUrl(String API_KEY,@Nullable String[] words,String category,String color,boolean latest){
-        StringBuilder startUrl = new StringBuilder("https://pixabay.com/api/?key=").append(API_KEY);
+    public static String getPhotosUrl(@Nullable String[] words,String category,String color,boolean latest){
+        StringBuilder startUrl = new StringBuilder("https://pixabay.com/api/?key=").append(BuildConfig.Pixabay_API_KEY);
         if (words != null) {
             startUrl.append("&q=");
             for (String word:words) {
@@ -35,14 +37,14 @@ public class UrlApiUtil {
         return startUrl.toString();
     }
 
-    public static String getCategoryUrl(String API_KEY,String category){
-        return "https://pixabay.com/api/?key=" + API_KEY +
+    public static String getCategoryUrl(String category){
+        return "https://pixabay.com/api/?key=" + BuildConfig.Pixabay_API_KEY +
                 "&category=" + category +
                 "&per_page=5";
     }
 
-    public static String getColorUrl(String API_KEY,String color){
-        return "https://pixabay.com/api/?key=" + API_KEY +
+    public static String getColorUrl(String color){
+        return "https://pixabay.com/api/?key=" + BuildConfig.Pixabay_API_KEY +
                 "&colors=" + color +
                 "&per_page=5";
     }

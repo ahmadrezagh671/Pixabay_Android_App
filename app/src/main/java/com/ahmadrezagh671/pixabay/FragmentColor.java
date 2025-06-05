@@ -91,7 +91,7 @@ public class FragmentColor extends Fragment {
         String[] color_array= getResources().getStringArray(R.array.color_array);
 
         for (String color:color_array) {
-            String url = UrlApiUtil.getColorUrl(getResources().getString(R.string.API_Key),color);
+            String url = UrlApiUtil.getColorUrl(color);
 
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
                 @Override
