@@ -42,11 +42,9 @@ An Android application that uses the [Pixabay API](https://pixabay.com/api/docs/
    git clone https://github.com/ahmadrezagh671/Pixabay_Android_App.git
    ```
 3. Open the project in Android Studio.
-4. Add your [Pixabay API](https://pixabay.com/api/docs/) key in strings.xml API_Key:
-   ```xml
-   <!--Get API from Pixabay-->
-   <string name="API_Key">your api</string>
-   <!--It's not secure to store it in strings.xml, but it's acceptable for testing purposes.-->
+4. Add your [Pixabay API](https://pixabay.com/api/docs/) key in local.properties:
+   ```properties
+   Pixabay_API_KEY=371469............34f606
    ```
 5. Build and run the app on an emulator or device.
 
