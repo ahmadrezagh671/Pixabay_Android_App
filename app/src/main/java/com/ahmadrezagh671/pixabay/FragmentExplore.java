@@ -1,5 +1,8 @@
 package com.ahmadrezagh671.pixabay;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -20,6 +23,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ahmadrezagh671.pixabay.Adapters.AdapterPosts;
@@ -56,6 +60,9 @@ public class FragmentExplore extends Fragment implements SwipeRefreshLayout.OnRe
 
     ConstraintLayout topDiscoverLayout;
     LinearLayout topFilterLayout;
+
+    Button tryAgainButton;
+    TextView errorTV;
 
     boolean latestEnable = false;
 
@@ -108,6 +115,11 @@ public class FragmentExplore extends Fragment implements SwipeRefreshLayout.OnRe
         colorSelectorBTN.setOnClickListener(this::onClickColorSelectorBTN);
         latestBTN = view.findViewById(R.id.latestBTN);
         latestBTN.setOnClickListener(this::onClickLatestBTN);
+
+        tryAgainButton = view.findViewById(R.id.tryAgainButton);
+        tryAgainButton.setOnClickListener(v -> reload());
+
+        errorTV = view.findViewById(R.id.errorTV);
 
         final int[] state = new int[1];
 
@@ -179,6 +191,11 @@ public class FragmentExplore extends Fragment implements SwipeRefreshLayout.OnRe
                         posts.add(item);
                     }
 
+                    if (posts.isEmpty()) {
+                        errorTV.setText("Nothing Found");
+                        errorTV.setVisibility(VISIBLE);
+                    }
+
                     if(adapterPosts == null) {
                         adapterPosts = new AdapterPosts(posts, getContext(), getActivity());
                         recyclerView.setAdapter(adapterPosts);
@@ -188,7 +205,11 @@ public class FragmentExplore extends Fragment implements SwipeRefreshLayout.OnRe
                     }
 
                 } catch (JSONException e) {
-                    throw new RuntimeException(e);
+                    //throw new RuntimeException(e);
+                    if (posts.isEmpty()) {
+                        errorTV.setText("Something is wrong");
+                        errorTV.setVisibility(VISIBLE);
+                    }
                 }
                 refreshing(false);
             }
@@ -196,7 +217,8 @@ public class FragmentExplore extends Fragment implements SwipeRefreshLayout.OnRe
             @Override
             public void onErrorResponse(VolleyError error) {
                 refreshing(false);
-                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                tryAgainButton.setVisibility(VISIBLE);
             }
         });
 
@@ -291,6 +313,8 @@ public class FragmentExplore extends Fragment implements SwipeRefreshLayout.OnRe
 
     private void reload(){
         requestPostsFromApi(getSearchViewQuery());
+        tryAgainButton.setVisibility(GONE);
+        errorTV.setVisibility(GONE);
     }
 
     public void setCategory(String string){

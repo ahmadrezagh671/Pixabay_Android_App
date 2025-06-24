@@ -160,6 +160,46 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topSearchAndFilterLayout"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <TextView
+                tools:visibility="visible"
+                android:visibility="gone"
+                android:id="@+id/errorTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Network Error"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/text_color_white"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                tools:visibility="visible"
+                android:visibility="gone"
+                android:id="@+id/tryAgainButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Try Again"
+                android:textAllCaps="false"
+                android:background="@drawable/shape_rounded_gradient"
+                android:textColor="@color/text_color_white"
+                android:paddingHorizontal="24dp"
+                android:stateListAnimator="@null"
+                android:singleLine="true"
+                />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
