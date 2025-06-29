@@ -1,6 +1,5 @@
-[![Downloads](https://img.shields.io/github/downloads/ahmadrezagh671/Pixabay_Android_App/total?logo=googleplay&logoColor=white&label=Download)](https://github.com/ahmadrezagh671/Pixabay_Android_App/releases)
-
 # Pixabay_Android_App
+[![Downloads](https://img.shields.io/github/downloads/ahmadrezagh671/Pixabay_Android_App/total?logo=googleplay&logoColor=white&label=Download)](https://github.com/ahmadrezagh671/Pixabay_Android_App/releases)
 
 An Android application that uses the [Pixabay API](https://pixabay.com/api/docs/) to browse, search, and download images.
 
