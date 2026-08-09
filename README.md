@@ -83,6 +83,7 @@ Download the latest APK directly from the [Releases page](https://github.com/ahm
 - Android Studio (latest stable version recommended)
 - Minimum SDK: 28 (Android 9)
 - A free [Pixabay API key](https://pixabay.com/api/docs/)
+- A [Firebase project](https://console.firebase.google.com/) with Analytics enabled (for `google-services.json`)
 
 ### Steps
 
@@ -98,7 +99,13 @@ Download the latest APK directly from the [Releases page](https://github.com/ahm
    Pixabay_API_KEY=your_api_key_here
    ```
 
-4. **Build and run** the app on an emulator or a physical device.
+4. **Add your `google-services.json`:**
+   - Create a Firebase project at the [Firebase Console](https://console.firebase.google.com/).
+   - Register an Android app with package name `com.ahmadrezagh671.pixabay`.
+   - Download the generated `google-services.json` and place it in `app/`.
+   - This file is gitignored since it's tied to your own Firebase project.
+
+5. **Build and run** the app on an emulator or a physical device.
 
 ---
 
@@ -108,7 +115,7 @@ This app uses **Firebase Analytics** to collect anonymous, aggregated usage data
 
 Firebase Analytics is provided by Google and subject to [Google's Privacy Policy](https://policies.google.com/privacy). If you distribute your own fork publicly, you should publish your own privacy policy describing this data collection.
 
-To remove Firebase Analytics: delete the `firebase-analytics` dependency and `com.google.gms.google-services` plugin in `app/build.gradle.kts`, and remove `app/google-services.json`.
+`app/google-services.json` is not committed to this repository since it's tied to a specific Firebase project. See [Getting Started](#-getting-started-build-from-source) for how to add your own. If you'd rather not use Analytics at all, remove the `firebase-analytics` dependency and `com.google.gms.google-services` plugin from `app/build.gradle.kts`.
 
 ## 📌 Attribution
 

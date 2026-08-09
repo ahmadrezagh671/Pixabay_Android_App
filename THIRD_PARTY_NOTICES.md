@@ -37,7 +37,8 @@ SDK and service. Use of this SDK is subject to:
 
 `app/google-services.json` contains the public client configuration for this integration
 (Firebase project ID, mobile SDK app ID, and an API key restricted to this app's package name).
-See the [Privacy & Analytics](README.md#-privacy--analytics) section of the README for details.
+This file is not committed to the repository; see the [Getting Started](README.md#-getting-started-build-from-source)
+and [Privacy & Analytics](README.md#-privacy--analytics) sections of the README for how to add your own.
 
 ## Content / Pixabay API
 
