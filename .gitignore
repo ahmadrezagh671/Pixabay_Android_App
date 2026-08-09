@@ -46,4 +46,5 @@ Thumbs.db
 # Android Studio caches
 .navigation/
 
+# google services
 **/google-services.json
