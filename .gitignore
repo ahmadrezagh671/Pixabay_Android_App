@@ -1,0 +1,47 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Local configuration
+local.properties
+
+# Generated files
+captures/
+.externalNativeBuild/
+.cxx/
+
+# APKs / AABs
+*.apk
+*.aab
+
+# Signing
+*.jks
+*.keystore
+
+# Google Services
+# Uncomment if you don't want to commit this file
+# google-services.json
+
+# Kotlin
+.kotlin/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Android Studio caches
+.navigation/
