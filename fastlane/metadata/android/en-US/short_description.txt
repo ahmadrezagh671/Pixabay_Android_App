@@ -1,1 +1,0 @@
-use the Pixabay API to search and display free images
